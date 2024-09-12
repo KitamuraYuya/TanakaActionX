@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D _rb = default;
     bool _isGrounded = false;
     Vector3 _initialPosition = default;
-    List<ItemBase> _itemList = new List<ItemBase>();
     Animator _anim = default;
     SpriteRenderer _sprite = default;
     float _h = 0;
@@ -39,27 +38,13 @@ public class PlayerController : MonoBehaviour
 
         _rb.velocity = velocity;
 
-        if (Input.GetButtonDown("Fire1"))
-        {
-            if (_itemList.Count > 0)
-            {
-                ItemBase item = _itemList[0];
-                _itemList.RemoveAt(0);
-                item.Activate();
-                Destroy(item.gameObject);
-            }
-        }
 
-        
+
+
         if (this.transform.position.y < -10)
         {
             this.transform.position = _initialPosition;
         }
-    }
-
-    public void GetItem(ItemBase item)
-    {
-        _itemList.Add(item);
     }
 
     void FixedUpdate()
@@ -85,8 +70,8 @@ public class PlayerController : MonoBehaviour
 
         if (_anim)
         {
-            _anim.SetFloat("Speed x",Mathf.Abs(_rb.velocity.x));
-            _anim.SetFloat("Speed y",_rb.velocity.y);
+            _anim.SetFloat("Speed x", Mathf.Abs(_rb.velocity.x));
+            _anim.SetFloat("Speed y", _rb.velocity.y);
             _anim.SetBool("isGrounded", _isGrounded);
         }
     }

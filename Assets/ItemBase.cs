@@ -21,19 +21,11 @@ public abstract class ItemBase : MonoBehaviour
                 Activate();
                 Destroy(this.gameObject);
             }
-            else if (_whemActivated == ActivateTiming.Use)
-            {
-                this.transform.position = Camera.main.transform.position;
-                GetComponent<Collider2D>().enabled = false;
-                collision.gameObject.GetComponent<PlayerController>().GetItem(this);
-            }
         }
     }
 
     enum ActivateTiming
     {
         Get,
-
-        Use,
     }
 }
