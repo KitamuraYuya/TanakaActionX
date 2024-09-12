@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,3 +13,4 @@ public class Scene : MonoBehaviour
         SceneManager.LoadScene(SceneName);
     }
 }
+
