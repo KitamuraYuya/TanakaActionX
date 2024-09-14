@@ -11,8 +11,8 @@ public abstract class ItemBase : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
-            if(_sound)
-            { 
+            if (_sound)
+            {
 
             }
 

@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    [SerializeField] float countup = 0.5f;
     [SerializeField] AudioSource _audeio;
     [SerializeField] AudioSource _budeio;
 
@@ -19,14 +18,10 @@ public class GameOver : MonoBehaviour
         if (_budeio.isPlaying)
         {
             _budeio.Stop();
-            countup += Time.deltaTime;
             Debug.Log("音楽を止める");
         }
 
-        if (countup <= 0)
-        {
-            SceneManager.LoadScene("GameOverScene");
-            Debug.Log("シーンを 変える ");
-        }
+        //SceneManager.LoadScene("GameOverScene");
+        //Debug.Log("シーンを 変える ");
     }
 }

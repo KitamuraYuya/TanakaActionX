@@ -13,6 +13,6 @@ public class GameManager : MonoBehaviour
     public void AddScore(int score)
     {
         _score += score;
-        _scoreText.text = _score.ToString("score" +"0000");
+        _scoreText.text = _score.ToString("score" + "0000");
     }
 }

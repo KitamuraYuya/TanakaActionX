@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    [SerializeField]  GameObject audioObject;
+    [SerializeField] GameObject audioObject;
     [SerializeField] private Image _PanelImage;
     [SerializeField] private float _speed;
 

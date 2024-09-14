@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class Scene : MonoBehaviour
 {
-   public void Laod(string SceneName)
+    public void Laod(string SceneName)
     {
         SceneManager.LoadScene(SceneName);
     }
