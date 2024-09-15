@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
@@ -67,14 +65,5 @@ public class PlayerController : MonoBehaviour
             _anim.SetFloat("Speed y", _rb.velocity.y);
             _anim.SetBool("isGrounded", _isGrounded);
         }
-    }
-    void OnCollisionStay(Collision i_collision)
-    {
-        // 地面以外にコリジョンに当たっていない前提。
-        // 複数のコリジョンに当たった場合は未対応。
-        var normal = i_collision.contacts[0].normal;
-
-        Vector3 dir = m_moveDirection - Vector3.Dot(m_moveDirection, normal) * normal;
-        m_moveDirection = dir.normalized;
     }
 }

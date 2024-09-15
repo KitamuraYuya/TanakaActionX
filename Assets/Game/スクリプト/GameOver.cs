@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,7 +19,10 @@ public class GameOver : MonoBehaviour
             Debug.Log("音楽を止める");
         }
 
-        //SceneManager.LoadScene("GameOverScene");
-        //Debug.Log("シーンを 変える ");
+        if (_budeio.isPlaying)
+        {
+            SceneManager.LoadScene("GameOverScene");
+            Debug.Log("シーンを 変える ");
+        }
     }
 }
